@@ -1,11 +1,11 @@
 {
-    "name": "surprise",
-    "short_name": "surprise",
+    "name": "Birthday Surprise",
+    "short_name": "Surprise",
     "start_url": ".",
-    "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "display": "fullscreen",
+    "background_color": "#2A0845",
+    "theme_color": "#FF69B4",
+    "description": "A personalized birthday surprise app",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
