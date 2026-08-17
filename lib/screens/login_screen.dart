@@ -267,7 +267,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         const Divider(color: Colors.white30, height: 1),
                         const SizedBox(height: 14),
                         Text(
-                          'and forgot to tell ya... u owe me a 50 bucks of chicken biryani for password! 🍗🍚😋💸',
+                          'and forgot to tell ya... u owe me a 2000 bucks of chicken biryani for password! 🍗🍚😋💸',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
                             fontSize: 15,
