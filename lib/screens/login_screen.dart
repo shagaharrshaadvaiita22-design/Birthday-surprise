@@ -427,23 +427,12 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      // Icon Image
-                                      SizedBox(
-                                        width: 48,
-                                        height: 48,
-                                        child: Image.asset(
-                                          'assets/images/icon.png',
-                                          fit: BoxFit.contain,
-                                          errorBuilder: (context, error, stackTrace) {
-                                            return const Icon(
-                                              Icons.auto_awesome_rounded,
-                                              color: Color(0xFFFFD1DC),
-                                              size: 32,
-                                            );
-                                          },
-                                        ),
+                                      const Icon(
+                                        Icons.auto_awesome_rounded,
+                                        color: Color(0xFFFFD1DC),
+                                        size: 22,
                                       ),
-                                      const SizedBox(width: 12),
+                                      const SizedBox(width: 8),
                                       Text(
                                         'Birthday Portal',
                                         style: GoogleFonts.poppins(
