@@ -1,10 +1,10 @@
-# surprise
+# Birthday-surprise
 
-A new Flutter project.
+A Flutter application for creating personalized birthday surprises.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a Flutter application designed to create memorable birthday experiences.
 
 A few resources to get you started if this is your first Flutter project:
 
