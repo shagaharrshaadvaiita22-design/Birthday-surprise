@@ -328,7 +328,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       body: SparkleOverlay(
         child: Stack(
           children: [
-            // Background Image matching user's room setup photo
+            // Background Image covering entire screen including status bar
             Positioned.fill(
               child: IgnorePointer(
                 child: Image.asset(
@@ -368,11 +368,15 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
               ),
             ),
 
+            // Music Control Button with SafeArea
             Positioned(
-              top: 16,
-              right: 16,
+              top: 0,
+              right: 0,
               child: SafeArea(
-                child: const MusicControlButton(size: 40),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16, right: 16),
+                  child: const MusicControlButton(size: 40),
+                ),
               ),
             ),
 
@@ -423,12 +427,23 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      const Icon(
-                                        Icons.auto_awesome_rounded,
-                                        color: Color(0xFFFFD1DC),
-                                        size: 22,
+                                      // Icon Image
+                                      SizedBox(
+                                        width: 48,
+                                        height: 48,
+                                        child: Image.asset(
+                                          'assets/images/icon.png',
+                                          fit: BoxFit.contain,
+                                          errorBuilder: (context, error, stackTrace) {
+                                            return const Icon(
+                                              Icons.auto_awesome_rounded,
+                                              color: Color(0xFFFFD1DC),
+                                              size: 32,
+                                            );
+                                          },
+                                        ),
                                       ),
-                                      const SizedBox(width: 8),
+                                      const SizedBox(width: 12),
                                       Text(
                                         'Birthday Portal',
                                         style: GoogleFonts.poppins(
