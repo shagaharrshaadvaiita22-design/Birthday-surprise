@@ -38,8 +38,8 @@ Future<void> exportSlideshow(List<String> assetPaths) async {
     }
 
     filters.add(
-      '[$index:v]scale=1280:720:force_original_aspect_ratio=decrease,'
-      'pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fps=30,'
+      '[$index:v]scale=640:360:force_original_aspect_ratio=decrease,'
+      'pad=640:360:(ow-iw)/2:(oh-ih)/2,setsar=1,fps=15,'
       'format=yuv420p,setpts=PTS-STARTPTS[v$index]',
     );
   }
@@ -51,8 +51,9 @@ Future<void> exportSlideshow(List<String> assetPaths) async {
     '-map', '[outv]',
     '-an',
     '-c:v', 'libx264',
-    '-preset', 'veryfast',
-    '-crf', '23',
+    '-preset', 'ultrafast',
+    '-crf', '28',
+    '-threads', '2',
     '-movflags', '+faststart',
     '-y',
     outputName,
