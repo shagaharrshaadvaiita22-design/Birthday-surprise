@@ -38,7 +38,9 @@ dependencies:
   shared_preferences: ^2.2.2
   audioplayers: ^6.7.1
   video_player: ^2.9.2
-  archive: ^3.6.1
+  ffmpeg_kit_flutter_new: ^4.6.2
+  ffmpeg_wasm: ^1.0.3
+  path_provider: ^2.1.5
   share_plus: ^10.1.4
 
 dev_dependencies:

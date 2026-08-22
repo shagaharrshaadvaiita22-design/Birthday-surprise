@@ -894,7 +894,7 @@ class _SlideshowScreenState extends State<_SlideshowScreen> {
       );
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Slideshow download is ready.')),
+        const SnackBar(content: Text('Slideshow video download is ready.')),
       );
     } catch (error) {
       if (!mounted) return;
