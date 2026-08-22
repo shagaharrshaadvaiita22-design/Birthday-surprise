@@ -49,8 +49,8 @@ class _FriendMemoriesScreenState extends State<FriendMemoriesScreen> {
       {
         'title': 'Brother & Sister Moments 👫💖',
         'duration': 'Video 3',
-        'friends': 'Brother & Sister Squad',
-        'desc': 'A sweet, funny & special compilation of golden memories with your loving brother!',
+        'friends': 'Brother & Sister',
+        'desc': 'A sweet, funny & special compilation of golden memories with your brother!',
         'thumbnail': 'assets/images/brosis_doodle_thumb.png',
         'videoPath': 'assets/videos/v 3.mp4',
       },

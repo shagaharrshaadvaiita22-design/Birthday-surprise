@@ -6,6 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../models/birthday_config.dart';
 import '../widgets/sparkle_overlay.dart';
 import '../widgets/music_control_button.dart';
+import '../services/slideshow_download_service.dart';
 
 const int kCoreMemoryCount = 75;
 
@@ -824,6 +825,7 @@ class _SlideshowScreenState extends State<_SlideshowScreen> {
   int _currentIndex = 0;
   Timer? _timer;
   bool _isPlaying = true;
+  bool _isDownloading = false;
 
   @override
   void initState() {
@@ -880,6 +882,28 @@ class _SlideshowScreenState extends State<_SlideshowScreen> {
         _timer?.cancel();
       }
     });
+  }
+
+  Future<void> _downloadSlideshow() async {
+    if (_isDownloading) return;
+
+    setState(() => _isDownloading = true);
+    try {
+      await downloadSlideshow(
+        widget.memoryOrder.map(widget.getImagePath).toList(growable: false),
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Slideshow download is ready.')),
+      );
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not download slideshow: $error')),
+      );
+    } finally {
+      if (mounted) setState(() => _isDownloading = false);
+    }
   }
 
   @override
@@ -980,12 +1004,35 @@ class _SlideshowScreenState extends State<_SlideshowScreen> {
                     ),
                   ],
                 ),
-                CircleAvatar(
-                  backgroundColor: Colors.black54,
-                  child: IconButton(
-                    icon: const Icon(Icons.close_rounded, color: Colors.white),
-                    onPressed: () => Navigator.pop(context),
-                  ),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.black54,
+                      child: IconButton(
+                        tooltip: 'Download slideshow',
+                        icon: _isDownloading
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : const Icon(Icons.download_rounded, color: Colors.white),
+                        onPressed: _downloadSlideshow,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundColor: Colors.black54,
+                      child: IconButton(
+                        tooltip: 'Close slideshow',
+                        icon: const Icon(Icons.close_rounded, color: Colors.white),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
