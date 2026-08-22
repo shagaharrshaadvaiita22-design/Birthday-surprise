@@ -38,10 +38,6 @@ dependencies:
   shared_preferences: ^2.2.2
   audioplayers: ^6.7.1
   video_player: ^2.9.2
-  ffmpeg_kit_flutter_new: ^4.6.2
-  ffmpeg_wasm: ^1.0.3
-  path_provider: ^2.1.5
-  share_plus: ^10.1.4
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +61,9 @@ flutter:
     - assets/images/her_doodle_thumb.png
     - assets/images/friends_doodle_thumb.png
     - assets/images/brosis_doodle_thumb.png
+    - assets/images/happy_excited_girl_doodle.png
+    - assets/images/splash_cake_doodle.png
+    - assets/images/splash_teddy_doodle.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -156,16 +156,16 @@ class _SplashSequenceScreenState extends State<SplashSequenceScreen> {
 
   Widget _buildPhaseWidget(Size size) {
     switch (_currentPhase) {
-      // 0 to 3 seconds: "Happy Birthday"
+      // 0 to 3 seconds: "Happy Birthday" with cute cake doodle
       case 0:
         return Column(
           key: const ValueKey(0),
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.auto_awesome_rounded,
-              color: Color(0xFFFFD1DC),
-              size: 40,
+            Image.asset(
+              'assets/images/splash_cake_doodle.png',
+              height: size.height > 600 ? 150 : 120,
+              fit: BoxFit.contain,
             ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
             const SizedBox(height: 16),
             Text(
@@ -192,16 +192,17 @@ class _SplashSequenceScreenState extends State<SplashSequenceScreen> {
           ],
         );
 
-      // 3 to 6 seconds: "liki"
+      // 3 to 6 seconds: "likitha" with cute birthday teddy bear doodle holding a gift box
       case 1:
         return Column(
           key: const ValueKey(1),
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              '🦋',
-              style: TextStyle(fontSize: 44),
-            ).animate().slideY(begin: -0.3, end: 0, duration: 600.ms),
+            Image.asset(
+              'assets/images/splash_teddy_doodle.png',
+              height: size.height > 600 ? 160 : 130,
+              fit: BoxFit.contain,
+            ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
             const SizedBox(height: 12),
             Text(
               'likitha',

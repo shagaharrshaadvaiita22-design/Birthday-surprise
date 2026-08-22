@@ -63,15 +63,25 @@ class SurpriseEndScreen extends StatelessWidget {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.cake_rounded,
-                            color: Color(0xFFFFD1DC),
-                            size: 60,
-                          ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
-                          const SizedBox(height: 24),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 10),
+                            // Happy young girl doodle (excited with blush on her face)
+                            Image.asset(
+                              'assets/images/happy_excited_girl_doodle.png',
+                              height: 140,
+                              fit: BoxFit.contain,
+                            ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
+                            const SizedBox(height: 16),
+                            const Icon(
+                              Icons.cake_rounded,
+                              color: Color(0xFFFFD1DC),
+                              size: 60,
+                            ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
+                            const SizedBox(height: 24),
                           Text(
                             'Happiest Birthday, ${config.girlName}!',
                             textAlign: TextAlign.center,
@@ -153,7 +163,8 @@ class SurpriseEndScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ],
+                ),
+              ],
               ),
             ),
           ],
