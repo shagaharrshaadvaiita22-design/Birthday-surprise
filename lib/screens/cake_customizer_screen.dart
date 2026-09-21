@@ -140,7 +140,7 @@ class _CakeCustomizerScreenState extends State<CakeCustomizerScreen> {
                             fit: BoxFit.scaleDown,
                             alignment: Alignment.center,
                             child: Text(
-                              'Select your favorite realistic cake — ${widget.config.girlName} ✨',
+                              'Select your favorite cake — ${widget.config.girlName} ✨',
                               textAlign: TextAlign.center,
                               maxLines: 1,
                               softWrap: false,
