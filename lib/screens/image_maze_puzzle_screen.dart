@@ -45,6 +45,7 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
   }
 
   int get _rows => _tileCount ~/ _columns;
+  static const double _tileSpacing = 3;
   int get _shuffleMoves => 8 + (_round * 3);
   String get _imagePath => 'assets/puzzles/p$_round.jpg';
 
@@ -82,7 +83,6 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
   }
 
   void _tapTile(int index) {
-    if (_tiles[index] == index) return;
     if (_selectedTile == null) {
       setState(() => _selectedTile = index);
       return;
@@ -267,6 +267,11 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
                         constraints.maxHeight * _photoAspectRatio,
                       );
                       final boardHeight = boardWidth / _photoAspectRatio;
+                      final tileWidth =
+                          (boardWidth - (_columns - 1) * _tileSpacing) /
+                          _columns;
+                      final tileHeight =
+                          (boardHeight - (_rows - 1) * _tileSpacing) / _rows;
                       return Center(
                         child: SizedBox(
                           width: boardWidth,
@@ -276,8 +281,9 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: _columns,
-                                  crossAxisSpacing: 3,
-                                  mainAxisSpacing: 3,
+                                  crossAxisSpacing: _tileSpacing,
+                                  mainAxisSpacing: _tileSpacing,
+                                  childAspectRatio: tileWidth / tileHeight,
                                 ),
                             itemCount: _tileCount,
                             itemBuilder: (context, index) =>
@@ -327,8 +333,8 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
     final sourceIndex = _tiles[index];
     final sourceColumn = sourceIndex % _columns;
     final sourceRow = sourceIndex ~/ _columns;
-    final tileWidth = boardWidth / _columns;
-    final tileHeight = boardHeight / _rows;
+    final tileWidth = (boardWidth - (_columns - 1) * _tileSpacing) / _columns;
+    final tileHeight = (boardHeight - (_rows - 1) * _tileSpacing) / _rows;
     final isSelected = _selectedTile == index;
     return GestureDetector(
       onTap: () => _tapTile(index),
