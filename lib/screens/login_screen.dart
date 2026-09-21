@@ -154,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
               ),
               const SizedBox(height: 8),
               Text(
-                'I\'m moving fast across the screen! Can\'t give any secrets here! Keep catching me! 🏃‍♂️💨✨',
+                'You Want Password then Keep catching me! 🏃‍♂️💨✨',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   fontSize: 13,

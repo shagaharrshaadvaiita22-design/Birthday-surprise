@@ -99,7 +99,7 @@ class SurpriseEndScreen extends StatelessWidget {
                           ).animate().fadeIn(duration: 800.ms),
                           const SizedBox(height: 14),
                           Text(
-                            'Hope you liked my app!😁 Give ratings at the end, and always keep smiling 💖😄, my sweet sister🥰.',
+                            'Always keep Smiling Forever and ever 😄🧿, I hope you like my surprise 😊, Many more to come Upcoming Days 🩷, My Sweet Sister🥰,Enjoy Your Day With FULL JOY😊🌟🧿.',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               color: Colors.white.withValues(alpha: 0.85),

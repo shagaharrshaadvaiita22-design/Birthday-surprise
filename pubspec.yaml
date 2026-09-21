@@ -64,6 +64,7 @@ flutter:
     - assets/images/happy_excited_girl_doodle.png
     - assets/images/splash_cake_doodle.png
     - assets/images/splash_teddy_doodle.png
+    - assets/puzzles/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -103,7 +103,7 @@ class _SplashSequenceScreenState extends State<SplashSequenceScreen> {
               ),
             ),
 
-            // Progress Indicator at top (2 dots representing 3-second stages)
+            // Progress Indicator at top (2 timed splash stages)
             SafeArea(
               child: Align(
                 alignment: Alignment.topCenter,
@@ -133,9 +133,7 @@ class _SplashSequenceScreenState extends State<SplashSequenceScreen> {
             Positioned(
               top: 16,
               right: 16,
-              child: SafeArea(
-                child: const MusicControlButton(size: 38),
-              ),
+              child: SafeArea(child: const MusicControlButton(size: 38)),
             ),
           ],
         ),
@@ -169,26 +167,29 @@ class _SplashSequenceScreenState extends State<SplashSequenceScreen> {
             ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
             const SizedBox(height: 16),
             Text(
-              'Happy Birthday',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.greatVibes(
-                fontSize: size.width > 600 ? 72 : 56,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 20.0,
-                    color: const Color(0xFFFFB6C1).withValues(alpha: 0.9),
-                    offset: const Offset(0, 0),
+                  'Happy Birthday',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.greatVibes(
+                    fontSize: size.width > 600 ? 72 : 56,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 20.0,
+                        color: const Color(0xFFFFB6C1).withValues(alpha: 0.9),
+                        offset: const Offset(0, 0),
+                      ),
+                      const Shadow(
+                        blurRadius: 10.0,
+                        color: Colors.black45,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
                   ),
-                  const Shadow(
-                    blurRadius: 10.0,
-                    color: Colors.black45,
-                    offset: Offset(2, 2),
-                  ),
-                ],
-              ),
-            ).animate().fadeIn(duration: 800.ms).scale(begin: const Offset(0.8, 0.8), end: const Offset(1, 1)),
+                )
+                .animate()
+                .fadeIn(duration: 800.ms)
+                .scale(begin: const Offset(0.8, 0.8), end: const Offset(1, 1)),
           ],
         );
 
@@ -205,21 +206,27 @@ class _SplashSequenceScreenState extends State<SplashSequenceScreen> {
             ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
             const SizedBox(height: 12),
             Text(
-              'likitha',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.sacramento(
-                fontSize: size.width > 600 ? 84 : 68,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xFFFFD1DC),
-                shadows: [
-                  Shadow(
-                    blurRadius: 25.0,
-                    color: const Color(0xFFFF69B4).withValues(alpha: 0.95),
-                    offset: const Offset(0, 0),
+                  'likitha',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.sacramento(
+                    fontSize: size.width > 600 ? 84 : 68,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFFFD1DC),
+                    shadows: [
+                      Shadow(
+                        blurRadius: 25.0,
+                        color: const Color(0xFFFF69B4).withValues(alpha: 0.95),
+                        offset: const Offset(0, 0),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ).animate().fadeIn(duration: 800.ms).scale(begin: const Offset(0.85, 0.85), end: const Offset(1, 1)),
+                )
+                .animate()
+                .fadeIn(duration: 800.ms)
+                .scale(
+                  begin: const Offset(0.85, 0.85),
+                  end: const Offset(1, 1),
+                ),
           ],
         );
 

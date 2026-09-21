@@ -306,7 +306,7 @@ class _CakeCustomizerScreenState extends State<CakeCustomizerScreen> {
                         onPressed: () => _proceedWithCake(_cakes[_selectedCakeIndex]),
                         icon: const Icon(Icons.auto_awesome_rounded, color: Colors.white),
                         label: Text(
-                          'Choose This Cake & Present 🎁',
+                          'Choose The Cake 🎂',
                           style: GoogleFonts.poppins(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,

@@ -63,7 +63,7 @@ class _AnimeGirlCakeScreenState extends State<AnimeGirlCakeScreen> {
             const SizedBox(width: 10),
             Expanded(
               child: Text(
-                '🎉 Make a Wish! Happy 21st Birthday ${widget.config.girlName}! ✨',
+                'Happy 21st Birthday ${widget.config.girlName}! ✨🎂',
                 style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w600),
               ),
             ),
@@ -252,7 +252,7 @@ class _AnimeGirlCakeScreenState extends State<AnimeGirlCakeScreen> {
                             ),
                             label: Text(
                               _candlesLit
-                                  ? 'Blow Out Number 21 Candles 🌬️'
+                                  ? 'Make a Wish & Blow Out the Candles 🌬️'
                                   : 'Candles Extinguished! 🎂✨',
                               style: GoogleFonts.poppins(
                                 fontSize: 15,
