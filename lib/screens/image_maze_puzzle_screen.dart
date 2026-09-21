@@ -7,7 +7,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../models/birthday_config.dart';
 import '../widgets/music_control_button.dart';
 import '../widgets/sparkle_overlay.dart';
-import 'cake_customizer_screen.dart';
+import 'surprise_hub_screen.dart';
 
 class ImageMazePuzzleScreen extends StatefulWidget {
   final BirthdayConfig config;
@@ -169,14 +169,14 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
       builder: (context) => AlertDialog(
         backgroundColor: const Color(0xFF42182D),
         title: Text(
-          'Maze mastered!',
+          'Congratulations, Liki! 🎉',
           style: GoogleFonts.greatVibes(
             fontSize: 32,
             color: const Color(0xFFFFD1DC),
           ),
         ),
         content: Text(
-          'You solved all 10 birthday photos. Your cake surprise is ready.',
+          'You solved all 10 puzzles!',
           style: GoogleFonts.poppins(color: Colors.white70),
         ),
         actions: [
@@ -186,12 +186,12 @@ class _ImageMazePuzzleScreenState extends State<ImageMazePuzzleScreen> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => CakeCustomizerScreen(config: widget.config),
+                  builder: (_) => SurpriseHubScreen(config: widget.config),
                 ),
               );
             },
             child: const Text(
-              'Open cake studio',
+              'Return to Surprise World',
               style: TextStyle(color: Color(0xFFFFB6C1)),
             ),
           ),
